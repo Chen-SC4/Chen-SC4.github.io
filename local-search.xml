@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>大端序与小端序简述</title>
+    <link href="/2022/07/14/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F%E7%AE%80%E8%BF%B0/"/>
+    <url>/2022/07/14/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F%E7%AE%80%E8%BF%B0/</url>
+    
+    <content type="html"><![CDATA[<h2 id="字节序">字节序</h2><blockquote><p>字节顺序，又称端序或尾序（英语：Endianness），在计算机科学领域中，指电脑内存中或在数字通信链路中，组成多字节的字的字节的排列顺序。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[字节顺序-Wikipedia](https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F)">[1]</span></a></sup></p></blockquote><p>我们常说的大端序与小端序就是两种排列顺序。</p><h2 id="大端序与小端序">大端序与小端序</h2><p>大端序就是大头在前，将高位的字节放在低位的地址上，这样人在阅读时就会比较方便，因为从左到右阅读对应着地址从低到高，符合人们的阅读习惯。</p><p>小端序与大端序相反，将低位的字节放在低位的地址上，这样不利于人的阅读，但是利于计算机的运算操作，因为在四则运算中，需要从低位开始计算然后判断进位，之后算到高位。</p><p>下面的例子中，分别使用大端序存储和小端序存储来存储<code>0x1234 5678</code>。</p><center><table><thead><tr class="header"><th style="text-align: center;">0</th><th style="text-align: center;">1</th><th style="text-align: center;">2</th><th style="text-align: center;">3</th></tr></thead><tbody><tr class="odd"><td style="text-align: center;">0x12</td><td style="text-align: center;">0x34</td><td style="text-align: center;">0x56</td><td style="text-align: center;">0x78</td></tr></tbody></table><p><font face="楷体">大端序存储</font></p></center><center><table><thead><tr class="header"><th style="text-align: center;">0</th><th style="text-align: center;">1</th><th style="text-align: center;">2</th><th style="text-align: center;">3</th></tr></thead><tbody><tr class="odd"><td style="text-align: center;">0x78</td><td style="text-align: center;">0x56</td><td style="text-align: center;">0x34</td><td style="text-align: center;">0x12</td></tr></tbody></table><p><font face="楷体">小端序存储</font></p></center><p>例如检查奇偶性，在大端序中，计算机需要读到最后一位才知道时奇数还是偶数，然而在小端序中，计算机只用读第一位就知道了。</p><p>不过小端序并不总是对计算机友好，例如在判断正负号时，大端序就能在第一位判断出来，而小端序则需要读取到最后一位。</p><p>类似的运算还有很多，综合的看，小端序的存储顺序有利于四则运算这种逐位的运算，而大端存储方式有利于只针对于高位的计算，例如判断正负号等。</p><h2 id="参考资料">参考资料</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F">字节顺序-Wikipedia</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><ahref="https://www.zhihu.com/question/25311159">知乎-大小端字节序存在的意义，为什么不用一个标准呢?</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://www.ruanyifeng.com/blog/2022/06/endianness-analysis.html">阮一峰-字节序探析：大端与小端的比较</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    <categories>
+      
+      <category>考研</category>
+      
+      <category>计算机组成原理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机原理</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>操作系统引导简述</title>
     <link href="/2022/07/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E7%AE%80%E8%BF%B0/"/>
     <url>/2022/07/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E7%AE%80%E8%BF%B0/</url>
@@ -22,7 +49,7 @@
     
     <tags>
       
-      <tag>操作系统</tag>
+      <tag>操作系统 计算机原理</tag>
       
     </tags>
     

@@ -21,22 +21,22 @@
   <meta name="author" content="Chen Mo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="计算机的启动过程大致分为四个阶段。 一、BIOS BIOS程序位于主板中的ROM芯片，计算机通电之后，CPU首先就会读取它。 POST 硬件自检 BIOS程序首先会做的就是硬件自检，即检查计算机的硬件是否满足运行的基本要求。如果硬件出现问题，主板会发出蜂鸣声。 启动顺序 Boot Sequence 完成硬件自检之后，BIOS需要知道下一阶段的程序放在哪里。它需要读取Boot Seque">
+    <meta name="description" content="字节序  字节顺序，又称端序或尾序（英语：Endianness），在计算机科学领域中，指电脑内存中或在数字通信链路中，组成多字节的字的字节的排列顺序。[1]  我们常说的大端序与小端序就是两种排列顺序。 大端序与小端序 大端序就是大头在前，将高位的字节放在低位的地址上，这样人在阅读时就会比较方便，因为从左到右阅读对应着地址从低到高，符合人们的阅读习惯。 小端序与大端序相反，将低位的字">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统引导简述">
-<meta property="og:url" content="https://chen-sc4.github.io/2022/07/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E7%AE%80%E8%BF%B0/index.html">
+<meta property="og:title" content="大端序与小端序简述">
+<meta property="og:url" content="https://chen-sc4.github.io/2022/07/14/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F%E7%AE%80%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Chen Mo Blog">
-<meta property="og:description" content="计算机的启动过程大致分为四个阶段。 一、BIOS BIOS程序位于主板中的ROM芯片，计算机通电之后，CPU首先就会读取它。 POST 硬件自检 BIOS程序首先会做的就是硬件自检，即检查计算机的硬件是否满足运行的基本要求。如果硬件出现问题，主板会发出蜂鸣声。 启动顺序 Boot Sequence 完成硬件自检之后，BIOS需要知道下一阶段的程序放在哪里。它需要读取Boot Seque">
+<meta property="og:description" content="字节序  字节顺序，又称端序或尾序（英语：Endianness），在计算机科学领域中，指电脑内存中或在数字通信链路中，组成多字节的字的字节的排列顺序。[1]  我们常说的大端序与小端序就是两种排列顺序。 大端序与小端序 大端序就是大头在前，将高位的字节放在低位的地址上，这样人在阅读时就会比较方便，因为从左到右阅读对应着地址从低到高，符合人们的阅读习惯。 小端序与大端序相反，将低位的字">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-13T13:21:58.000Z">
-<meta property="article:modified_time" content="2022-07-14T10:43:33.089Z">
+<meta property="article:published_time" content="2022-07-14T10:42:21.000Z">
+<meta property="article:modified_time" content="2022-07-14T12:42:32.566Z">
 <meta property="article:author" content="Chen Mo">
-<meta property="article:tag" content="操作系统 计算机原理">
+<meta property="article:tag" content="计算机原理">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>操作系统引导简述 - Chen Mo Blog</title>
+  <title>大端序与小端序简述 - Chen Mo Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="操作系统引导简述"></span>
+            <span id="subtitle" data-typed-text="大端序与小端序简述"></span>
           
         </div>
 
@@ -216,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-13 21:21" pubdate>
-          2022年7月13日 晚上
+        <time datetime="2022-07-14 18:42" pubdate>
+          2022年7月14日 晚上
         </time>
       </span>
     
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          827 字
+          585 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          7 分钟
+          5 分钟
         
       </span>
     
@@ -277,64 +277,92 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">操作系统引导简述</h1>
+            <h1 style="display: none">大端序与小端序简述</h1>
             
             
               <div class="markdown-body">
                 
-                <p>计算机的启动过程大致分为四个阶段。</p>
-<h2 id="一bios">一、BIOS</h2>
-<p>BIOS程序位于主板中的ROM芯片，计算机通电之后，CPU首先就会读取它。</p>
-<h3 id="post-硬件自检">POST 硬件自检</h3>
-<p>BIOS程序首先会做的就是硬件自检，即检查计算机的硬件是否满足运行的基本要求。如果硬件出现问题，主板会发出蜂鸣声。</p>
-<h3 id="启动顺序-boot-sequence">启动顺序 Boot Sequence</h3>
-<p>完成硬件自检之后，<code>BIOS</code>需要知道下一阶段的程序放在哪里。它需要读取<code>Boot Sequence</code>。</p>
+                <h2 id="字节序">字节序</h2>
 <blockquote>
-<p>之前有过安装双系统的经验，应该是可以在这个地方设置U盘引导启动。</p>
+<p>字节顺序，又称端序或尾序（英语：Endianness），在计算机科学领域中，指电脑内存中或在数字通信链路中，组成多字节的字的字节的排列顺序。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[字节顺序-Wikipedia](https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F)">[1]</span></a></sup></p>
 </blockquote>
-<h2 id="二mbr-主引导记录">二、MBR 主引导记录</h2>
-<p>BIOS根据读取到的启动顺序，将控制权交给排在第一位的存储设备。</p>
-<p>此时，CPU将读取该存储设备的第一扇区的前512个字节(前512个字节存放MBR，且以<code>0x55 0xAA</code>结尾，这个是一项约定)。</p>
-<p>如果读取到的不是正确的MBR(最后两个字节不合要求)，则控制权会被交给排在启动顺序中第二位的存储设备。</p>
-<h3 id="mbr-结构">MBR 结构</h3>
+<p>我们常说的大端序与小端序就是两种排列顺序。</p>
+<h2 id="大端序与小端序">大端序与小端序</h2>
+<p>大端序就是大头在前，将高位的字节放在低位的地址上，这样人在阅读时就会比较方便，因为从左到右阅读对应着地址从低到高，符合人们的阅读习惯。</p>
+<p>小端序与大端序相反，将低位的字节放在低位的地址上，这样不利于人的阅读，但是利于计算机的运算操作，因为在四则运算中，需要从低位开始计算然后判断进位，之后算到高位。</p>
+<p>下面的例子中，分别使用大端序存储和小端序存储来存储<code>0x1234 5678</code>。</p>
+<center>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">位置</th>
-<th style="text-align: center;">作用</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">1 ~ 446 (446)Bytes</td>
-<td style="text-align: center;">调用操作系统的机器码</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">447 ~ 510 (64)Bytes</td>
-<td style="text-align: center;">分区表</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">511 ~ 512 (2)Bytes</td>
-<td style="text-align: center;">签名(0x55, 0xAA)</td>
+<td style="text-align: center;">0x12</td>
+<td style="text-align: center;">0x34</td>
+<td style="text-align: center;">0x56</td>
+<td style="text-align: center;">0x78</td>
 </tr>
 </tbody>
 </table>
-<p>其中分区表的作用是将硬盘分成若干个区。</p>
-<h3 id="分区表">分区表</h3>
-<p>硬盘在分区之后，可以安装不同的操作系统，<code>MBR</code>需要知道目标操作系统的引导程序在哪个分区。<code>MBR</code>通过分区的第一个字节来寻找分区，如果第一个字节为<code>0x80</code>，则为目标分区。</p>
-<h2 id="三硬盘启动">三、硬盘启动</h2>
-<p>将控制权交给目标分区后，计算机会读取分区中的第一个扇区中的<code>VBR/PBR</code>。</p>
-<p>它的作用是告诉计算机操作系统在分区中的位置，然后控制权就会被移交给操作系统了。</p>
-<blockquote>
-<p>之前安装双系统的时候，并不是通过自动读取<code>VBR/PBR</code>的方式启动的，而是运行了事先安装的<code>Grub</code>启动管理器，由用户进行选择之后再进行读取，之后再启动的。</p>
-</blockquote>
-<h2 id="四操作系统">四、操作系统</h2>
-<p>控制权交给操作系统之后，操作系统首先会将自己的内核(Kernel)放入内存。</p>
-<p>然后加载初始化进程(Init)。</p>
-<p>之后再进行系统的各个模块的加载，最后进行用户登录，启动完成。</p>
-<h2 id="五参考资料">五、参考资料</h2>
-<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/02/booting.html">1.
-计算机是如何启动的</a></p>
+<p><font face="楷体">大端序存储</font></p>
+</center>
+<center>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0x78</td>
+<td style="text-align: center;">0x56</td>
+<td style="text-align: center;">0x34</td>
+<td style="text-align: center;">0x12</td>
+</tr>
+</tbody>
+</table>
+<p><font face="楷体">小端序存储</font></p>
+</center>
+<p>例如检查奇偶性，在大端序中，计算机需要读到最后一位才知道时奇数还是偶数，然而在小端序中，计算机只用读第一位就知道了。</p>
+<p>不过小端序并不总是对计算机友好，例如在判断正负号时，大端序就能在第一位判断出来，而小端序则需要读取到最后一位。</p>
+<p>类似的运算还有很多，综合的看，小端序的存储顺序有利于四则运算这种逐位的运算，而大端存储方式有利于只针对于高位的计算，例如判断正负号等。</p>
+<h2 id="参考资料">参考资料</h2>
+<section class="footnotes">
+<div class="footnote-list">
+<ol>
+<li>
+<span id="fn:1" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F">字节顺序-Wikipedia</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:2" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/25311159">知乎-大小端字节序存在的意义，为什么不用一个标准呢?</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:3" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2022/06/endianness-analysis.html">阮一峰-字节序探析：大端与小端的比较</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+</ol>
+</div>
+</section>
 
                 
               </div>
@@ -358,7 +386,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E8%80%83%E7%A0%94/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/%E8%80%83%E7%A0%94/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="category-chain-item">计算机组成原理</a>
   
   
 
@@ -375,7 +403,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/">#操作系统 计算机原理</a>
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/">#计算机原理</a>
       
     </div>
   
@@ -387,8 +415,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>操作系统引导简述</div>
-      <div>https://chen-sc4.github.io/2022/07/13/操作系统引导简述/</div>
+      <div>大端序与小端序简述</div>
+      <div>https://chen-sc4.github.io/2022/07/14/大端序与小端序简述/</div>
     </div>
     <div class="license-meta">
       
@@ -400,7 +428,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月13日</div>
+          <div>2022年7月14日</div>
         </div>
       
       
@@ -430,18 +458,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/14/%E5%A4%A7%E7%AB%AF%E5%BA%8F%E4%B8%8E%E5%B0%8F%E7%AB%AF%E5%BA%8F%E7%AE%80%E8%BF%B0/" title="大端序与小端序简述">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">大端序与小端序简述</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/11/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E7%AE%80%E8%BF%B0/" title="归并排序简述">
-                        <span class="hidden-mobile">归并排序简述</span>
+                      <a href="/2022/07/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E7%AE%80%E8%BF%B0/" title="操作系统引导简述">
+                        <span class="hidden-mobile">操作系统引导简述</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
