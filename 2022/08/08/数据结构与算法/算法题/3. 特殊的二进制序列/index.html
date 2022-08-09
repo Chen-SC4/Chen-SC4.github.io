@@ -21,22 +21,22 @@
   <meta name="author" content="Chen Mo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="循环队列 循环队列是一种基于数组实现的队列。它的添加和删除操作的时间复杂度都为O(1)。 如果是基于数组实现的普通队列，它的删除操作的时间复杂度为O(1)，而添加操作就会涉及到数组的移动，其时间复杂度为O(n)。  循环队列的实现 为了减少边界的讨论，在实现循环队列的时候，为尾节点添加哨兵。 1234567891011121314151617181920212223242526272829303">
+    <meta name="description" content="特殊的二进制序列  将1看成左括号(，将0看成右括号)。 本题的二进制序列性质：  0的数量与1的数量相等 - 左括号与右括号数量相等 二进制序列的每一个前缀码中1的数量要大于0的数量 - 括号序列合法 (即不会出现)( 的情况)  本题的要求就是相邻的两个括号可以交换位置，保证最后的括号序列中(的位置尽量靠前。 可以使用递归来实现：  对于一对括号(...)，若括号中没">
 <meta property="og:type" content="article">
-<meta property="og:title" content="循环队列简述">
-<meta property="og:url" content="https://chen-sc4.github.io/2022/08/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E7%AE%80%E8%BF%B0/index.html">
+<meta property="og:title" content="3. 特殊的二进制序列">
+<meta property="og:url" content="https://chen-sc4.github.io/2022/08/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E9%A2%98/3.%20%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BA%8F%E5%88%97/index.html">
 <meta property="og:site_name" content="Chen Mo Blog">
-<meta property="og:description" content="循环队列 循环队列是一种基于数组实现的队列。它的添加和删除操作的时间复杂度都为O(1)。 如果是基于数组实现的普通队列，它的删除操作的时间复杂度为O(1)，而添加操作就会涉及到数组的移动，其时间复杂度为O(n)。  循环队列的实现 为了减少边界的讨论，在实现循环队列的时候，为尾节点添加哨兵。 1234567891011121314151617181920212223242526272829303">
+<meta property="og:description" content="特殊的二进制序列  将1看成左括号(，将0看成右括号)。 本题的二进制序列性质：  0的数量与1的数量相等 - 左括号与右括号数量相等 二进制序列的每一个前缀码中1的数量要大于0的数量 - 括号序列合法 (即不会出现)( 的情况)  本题的要求就是相邻的两个括号可以交换位置，保证最后的括号序列中(的位置尽量靠前。 可以使用递归来实现：  对于一对括号(...)，若括号中没">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-02T11:57:53.000Z">
-<meta property="article:modified_time" content="2022-08-08T13:25:35.274Z">
+<meta property="article:published_time" content="2022-08-08T13:04:05.000Z">
+<meta property="article:modified_time" content="2022-08-09T13:04:27.848Z">
 <meta property="article:author" content="Chen Mo">
-<meta property="article:tag" content="循环队列">
+<meta property="article:tag" content="递归">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>循环队列简述 - Chen Mo Blog</title>
+  <title>3. 特殊的二进制序列 - Chen Mo Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="循环队列简述"></span>
+            <span id="subtitle" data-typed-text="3. 特殊的二进制序列"></span>
           
         </div>
 
@@ -216,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-02 19:57" pubdate>
-          2022年8月2日 晚上
+        <time datetime="2022-08-08 21:04" pubdate>
+          2022年8月8日 晚上
         </time>
       </span>
     
@@ -228,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          881 字
         
       </span>
     
@@ -239,7 +239,7 @@
         
         
         
-          10 分钟
+          8 分钟
         
       </span>
     
@@ -277,17 +277,30 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">循环队列简述</h1>
+            <h1 style="display: none">3. 特殊的二进制序列</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="循环队列"><a class="markdownIt-Anchor" href="#循环队列"></a> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/design-circular-queue/">循环队列</a></h2>
-<p>循环队列是一种基于数组实现的队列。它的添加和删除操作的时间复杂度都为O(1)。</p>
-<p>如果是基于数组实现的普通队列，它的删除操作的时间复杂度为O(1)，而添加操作就会涉及到数组的移动，其时间复杂度为O(n)。</p>
-<h2 id="循环队列的实现"><a class="markdownIt-Anchor" href="#循环队列的实现"></a> 循环队列的实现</h2>
-<p>为了减少边界的讨论，在实现循环队列的时候，为尾节点添加哨兵。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyCircularQueue</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] queue;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> head;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> tail;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> size;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">MyCircularQueue</span><span class="hljs-params">(<span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-comment">// 多出来的一个空位表示尾节点</span><br>        <span class="hljs-built_in">this</span>.size = k + <span class="hljs-number">1</span>;<br>        <span class="hljs-built_in">this</span>.queue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-built_in">this</span>.size];<br>        <span class="hljs-built_in">this</span>.head = <span class="hljs-number">0</span>;<br>        <span class="hljs-built_in">this</span>.tail = <span class="hljs-number">0</span>;<br>    &#125;<br>    <br>    <span class="hljs-comment">// 向队列尾部添加元素 如果队列已满 返回false 否则 返回true</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">enQueue</span><span class="hljs-params">(<span class="hljs-type">int</span> value)</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.isFull()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-built_in">this</span>.queue[<span class="hljs-built_in">this</span>.tail] = value;<br>        <span class="hljs-built_in">this</span>.tail = (<span class="hljs-built_in">this</span>.tail + <span class="hljs-number">1</span>) % <span class="hljs-built_in">this</span>.size;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>    <br>    <span class="hljs-comment">// 从队列头部删除元素 如果队列为空 返回false 否则 返回true</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">deQueue</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.isEmpty()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-built_in">this</span>.head = (<span class="hljs-built_in">this</span>.head + <span class="hljs-number">1</span>) % <span class="hljs-built_in">this</span>.size;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>    <br>    <span class="hljs-comment">// 返回队列头部的元素</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">Front</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.isEmpty()) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.queue[<span class="hljs-built_in">this</span>.head];<br>    &#125;<br>    <br>    <span class="hljs-comment">// 返回队列尾部的元素</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">Rear</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.isEmpty()) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.queue[(<span class="hljs-built_in">this</span>.size + <span class="hljs-built_in">this</span>.tail - <span class="hljs-number">1</span>) % <span class="hljs-built_in">this</span>.size];<br>    &#125;<br>    <br>    <span class="hljs-comment">// 判断队列是否为空</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isEmpty</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.head == <span class="hljs-built_in">this</span>.tail;<br>    &#125;<br>    <br>    <span class="hljs-comment">// 判断队列是否已满</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isFull</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> ((<span class="hljs-built_in">this</span>.tail + <span class="hljs-number">1</span>) % <span class="hljs-built_in">this</span>.size == <span class="hljs-built_in">this</span>.head);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="特殊的二进制序列"><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/special-binary-string/">特殊的二进制序列</a></h2>
+<blockquote>
+<p>将<code>1</code>看成左括号<code>(</code>，将<code>0</code>看成右括号<code>)</code>。</p>
+<p>本题的二进制序列性质：</p>
+<ul>
+<li><code>0</code>的数量与<code>1</code>的数量相等 -
+左括号与右括号数量相等</li>
+<li>二进制序列的每一个前缀码中<code>1</code>的数量要大于<code>0</code>的数量
+- 括号序列合法 (即不会出现<code>)(</code> 的情况)</li>
+</ul>
+<p>本题的要求就是相邻的两个括号可以交换位置，保证最后的括号序列中<code>(</code>的位置尽量靠前。</p>
+<p>可以使用递归来实现：</p>
+<ul>
+<li>对于一对括号<code>(...)</code>，若括号中没有其他括号，则直接返回<code>"()"</code></li>
+<li>若括号中有其他括号，则将括号挑选出来，进行排序(排序规则为更多的左括号靠前的优先级更高)</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">makeLargestSpecial</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">length</span> <span class="hljs-operator">=</span> s.length();<br>        <span class="hljs-keyword">return</span> DFS(s, <span class="hljs-number">0</span>, length);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">DFS</span><span class="hljs-params">(String s, <span class="hljs-type">int</span> start, <span class="hljs-type">int</span> end)</span> &#123;<br>        <span class="hljs-keyword">if</span> (start &gt;= end) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">prev</span> <span class="hljs-operator">=</span> start, count = <span class="hljs-number">0</span>;<br>        List&lt;String&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> start; i &lt; end; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (s.charAt(i) == <span class="hljs-string">&#x27;1&#x27;</span>) &#123;<br>                ++count;<br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                --count;<br>                <span class="hljs-comment">// 挑选出括号</span><br>                <span class="hljs-keyword">if</span> (count == <span class="hljs-number">0</span>) &#123;<br>                    list.add(<span class="hljs-string">&quot;1&quot;</span> + DFS(s, prev + <span class="hljs-number">1</span>, i) + <span class="hljs-string">&quot;0&quot;</span>);<br>                    prev = i + <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 排序</span><br>        list.sort((<span class="hljs-keyword">var</span> a, <span class="hljs-keyword">var</span> b) -&gt; &#123;<br>            <span class="hljs-keyword">return</span> b.compareTo(a);<br>        &#125;);<br>        <span class="hljs-keyword">return</span> String.join(<span class="hljs-string">&quot;&quot;</span>, list);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -311,7 +324,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category-chain-item">数据结构</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E9%A2%98/" class="category-chain-item">算法题</a>
   
   
 
@@ -328,7 +341,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/">#循环队列</a>
+        <a href="/tags/%E9%80%92%E5%BD%92/">#递归</a>
       
     </div>
   
@@ -340,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>循环队列简述</div>
-      <div>https://chen-sc4.github.io/2022/08/02/数据结构与算法/数据结构/循环队列简述/</div>
+      <div>3. 特殊的二进制序列</div>
+      <div>https://chen-sc4.github.io/2022/08/08/数据结构与算法/算法题/3. 特殊的二进制序列/</div>
     </div>
     <div class="license-meta">
       
@@ -353,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年8月2日</div>
+          <div>2022年8月8日</div>
         </div>
       
       
@@ -383,9 +396,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E9%A2%98/3.%20%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%BA%8F%E5%88%97/" title="3. 特殊的二进制序列">
+                      <a href="/2022/08/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E9%A2%98/1-%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" title="1. 寻找两个正序数组的中位数">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">3. 特殊的二进制序列</span>
+                        <span class="hidden-mobile">1. 寻找两个正序数组的中位数</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -393,8 +406,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%AF%94%E8%B5%9B/%E7%AC%AC304%E5%9C%BA%E5%91%A8%E8%B5%9B-Leetcode/" title="第304场周赛 Leetcode">
-                        <span class="hidden-mobile">第304场周赛 Leetcode</span>
+                      <a href="/2022/08/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E7%AE%80%E8%BF%B0/" title="循环队列简述">
+                        <span class="hidden-mobile">循环队列简述</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
