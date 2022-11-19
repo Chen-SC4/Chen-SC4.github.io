@@ -21,12 +21,12 @@
   <meta name="author" content="Chen Mo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="计算机的启动过程大致分为四个阶段。  一、BIOS BIOS程序位于主板中的ROM芯片，计算机通电之后，CPU首先就会读取它。  POST 硬件自检 BIOS程序首先会做的就是硬件自检，即检查计算机的硬件是否满足运行的基本要求。如果硬件出现问题，主板会发出蜂鸣声。  启动顺序 Boot Sequence 完成硬件自检之后，BIOS需要知道下一阶段的程序放在哪里。它需要读取Boot Sequence">
+    <meta name="description" content="计算机的启动过程大致分为四个阶段。 一、BIOS BIOS程序位于主板中的ROM芯片，计算机通电之后，CPU首先就会读取它。 POST 硬件自检 BIOS程序首先会做的就是硬件自检，即检查计算机的硬件是否满足运行的基本要求。如果硬件出现问题，主板会发出蜂鸣声。 启动顺序 Boot Sequence 完成硬件自检之后，BIOS需要知道下一阶段的程序放在哪里。它需要读取Boot Seque">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统引导简述">
 <meta property="og:url" content="https://chen-sc4.github.io/2022/07/13/%E8%80%83%E7%A0%94/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E7%AE%80%E8%BF%B0/index.html">
 <meta property="og:site_name" content="Chen Mo Blog">
-<meta property="og:description" content="计算机的启动过程大致分为四个阶段。  一、BIOS BIOS程序位于主板中的ROM芯片，计算机通电之后，CPU首先就会读取它。  POST 硬件自检 BIOS程序首先会做的就是硬件自检，即检查计算机的硬件是否满足运行的基本要求。如果硬件出现问题，主板会发出蜂鸣声。  启动顺序 Boot Sequence 完成硬件自检之后，BIOS需要知道下一阶段的程序放在哪里。它需要读取Boot Sequence">
+<meta property="og:description" content="计算机的启动过程大致分为四个阶段。 一、BIOS BIOS程序位于主板中的ROM芯片，计算机通电之后，CPU首先就会读取它。 POST 硬件自检 BIOS程序首先会做的就是硬件自检，即检查计算机的硬件是否满足运行的基本要求。如果硬件出现问题，主板会发出蜂鸣声。 启动顺序 Boot Sequence 完成硬件自检之后，BIOS需要知道下一阶段的程序放在哪里。它需要读取Boot Seque">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-13T13:21:58.000Z">
 <meta property="article:modified_time" content="2022-07-14T13:45:53.725Z">
@@ -284,57 +284,58 @@
               <div class="markdown-body">
                 
                 <p>计算机的启动过程大致分为四个阶段。</p>
-<h2 id="一-bios"><a class="markdownIt-Anchor" href="#一-bios"></a> 一、BIOS</h2>
+<h2 id="一bios">一、BIOS</h2>
 <p>BIOS程序位于主板中的ROM芯片，计算机通电之后，CPU首先就会读取它。</p>
-<h3 id="post-硬件自检"><a class="markdownIt-Anchor" href="#post-硬件自检"></a> POST 硬件自检</h3>
+<h3 id="post-硬件自检">POST 硬件自检</h3>
 <p>BIOS程序首先会做的就是硬件自检，即检查计算机的硬件是否满足运行的基本要求。如果硬件出现问题，主板会发出蜂鸣声。</p>
-<h3 id="启动顺序-boot-sequence"><a class="markdownIt-Anchor" href="#启动顺序-boot-sequence"></a> 启动顺序 Boot Sequence</h3>
+<h3 id="启动顺序-boot-sequence">启动顺序 Boot Sequence</h3>
 <p>完成硬件自检之后，<code>BIOS</code>需要知道下一阶段的程序放在哪里。它需要读取<code>Boot Sequence</code>。</p>
 <blockquote>
 <p>之前有过安装双系统的经验，应该是可以在这个地方设置U盘引导启动。</p>
 </blockquote>
-<h2 id="二-mbr-主引导记录"><a class="markdownIt-Anchor" href="#二-mbr-主引导记录"></a> 二、MBR 主引导记录</h2>
+<h2 id="二mbr-主引导记录">二、MBR 主引导记录</h2>
 <p>BIOS根据读取到的启动顺序，将控制权交给排在第一位的存储设备。</p>
 <p>此时，CPU将读取该存储设备的第一扇区的前512个字节(前512个字节存放MBR，且以<code>0x55 0xAA</code>结尾，这个是一项约定)。</p>
 <p>如果读取到的不是正确的MBR(最后两个字节不合要求)，则控制权会被交给排在启动顺序中第二位的存储设备。</p>
-<h3 id="mbr-结构"><a class="markdownIt-Anchor" href="#mbr-结构"></a> MBR 结构</h3>
+<h3 id="mbr-结构">MBR 结构</h3>
 <table>
 <thead>
-<tr>
-<th style="text-align:center">位置</th>
-<th style="text-align:center">作用</th>
+<tr class="header">
+<th style="text-align: center;">位置</th>
+<th style="text-align: center;">作用</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:center">1 ~ 446 (446)Bytes</td>
-<td style="text-align:center">调用操作系统的机器码</td>
+<tr class="odd">
+<td style="text-align: center;">1 ~ 446 (446)Bytes</td>
+<td style="text-align: center;">调用操作系统的机器码</td>
 </tr>
-<tr>
-<td style="text-align:center">447 ~ 510 (64)Bytes</td>
-<td style="text-align:center">分区表</td>
+<tr class="even">
+<td style="text-align: center;">447 ~ 510 (64)Bytes</td>
+<td style="text-align: center;">分区表</td>
 </tr>
-<tr>
-<td style="text-align:center">511 ~ 512 (2)Bytes</td>
-<td style="text-align:center">签名(0x55, 0xAA)</td>
+<tr class="odd">
+<td style="text-align: center;">511 ~ 512 (2)Bytes</td>
+<td style="text-align: center;">签名(0x55, 0xAA)</td>
 </tr>
 </tbody>
 </table>
 <p>其中分区表的作用是将硬盘分成若干个区。</p>
-<h3 id="分区表"><a class="markdownIt-Anchor" href="#分区表"></a> 分区表</h3>
+<h3 id="分区表">分区表</h3>
 <p>硬盘在分区之后，可以安装不同的操作系统，<code>MBR</code>需要知道目标操作系统的引导程序在哪个分区。<code>MBR</code>通过分区的第一个字节来寻找分区，如果第一个字节为<code>0x80</code>，则为目标分区。</p>
-<h2 id="三-硬盘启动"><a class="markdownIt-Anchor" href="#三-硬盘启动"></a> 三、硬盘启动</h2>
+<h2 id="三硬盘启动">三、硬盘启动</h2>
 <p>将控制权交给目标分区后，计算机会读取分区中的第一个扇区中的<code>VBR/PBR</code>。</p>
 <p>它的作用是告诉计算机操作系统在分区中的位置，然后控制权就会被移交给操作系统了。</p>
 <blockquote>
 <p>之前安装双系统的时候，并不是通过自动读取<code>VBR/PBR</code>的方式启动的，而是运行了事先安装的<code>Grub</code>启动管理器，由用户进行选择之后再进行读取，之后再启动的。</p>
 </blockquote>
-<h2 id="四-操作系统"><a class="markdownIt-Anchor" href="#四-操作系统"></a> 四、操作系统</h2>
+<h2 id="四操作系统">四、操作系统</h2>
 <p>控制权交给操作系统之后，操作系统首先会将自己的内核(Kernel)放入内存。</p>
 <p>然后加载初始化进程(Init)。</p>
 <p>之后再进行系统的各个模块的加载，最后进行用户登录，启动完成。</p>
-<h2 id="五-参考资料"><a class="markdownIt-Anchor" href="#五-参考资料"></a> 五、参考资料</h2>
-<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/02/booting.html">1. 计算机是如何启动的</a></p>
+<h2 id="五参考资料">五、参考资料</h2>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/02/booting.html">1.
+计算机是如何启动的</a></p>
 
                 
               </div>
